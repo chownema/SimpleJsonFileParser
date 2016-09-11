@@ -49,6 +49,6 @@ Parser::loadInFile(string file)
 	fclose(fp);
 
 	// Set data to members of the parser class
-	string value = d["hello"].GetString();
-	cout << value;
+	// string value = d["hello"].GetString();
+	// cout << value;
 }
