@@ -1,11 +1,20 @@
-// COMP710 GP 2D Framework
+/**
+Simple Json Parser
+Parser.h
+Purpose: Manages Json Document objects
+
+@author Miguel Saavedra
+@version 1.1 3/10/16
+*/
 #ifndef __PARSER_H__
 #define __PARSER_H__
 
 #include <string>
+#include "rapidjson/document.h"
+#include "rapidjson/filereadstream.h"
 #pragma warning (disable : 4996)
 using namespace std;
-
+using namespace rapidjson;
 class Parser
 {
 	//Member Methods:
@@ -23,8 +32,7 @@ private:
 
 	//Member Data:
 public:
-	const char* json;
-	string stringValue;
+	Document document;
 protected:
 	static Parser* sm_pInstance;
 

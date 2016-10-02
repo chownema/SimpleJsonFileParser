@@ -65,12 +65,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="parser.h" />
-    <ClInclude Include="StaticClass.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Parser.cpp" />
-    <ClCompile Include="StaticClass.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

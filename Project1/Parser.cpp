@@ -1,3 +1,11 @@
+/**
+Simple Json Parser
+Parser.cpp
+Purpose: Manages Json Document objects
+
+@author Miguel Saavedra 
+@version 1.1 3/10/16
+*/
 // This include:
 #include "Parser.h"
 
@@ -8,10 +16,7 @@
 #include <string>
 #include <cstdio>
 
-#include "rapidjson/document.h"
-#include "rapidjson/filereadstream.h"
 using namespace std;
-using namespace rapidjson;
 // Static Members:
 Parser* Parser::sm_pInstance = 0;
 
@@ -36,19 +41,20 @@ Parser::~Parser()
 
 }
 
+/*
+This Loads in a file through a stream 
+and loads the json body into a json Document object
+*/
 void
 Parser::loadInFile(string file)
 {
 	// Open the file for reading
-	FILE* fp = fopen(file.c_str() , "rb"); // non-Windows use "r"
+	FILE* fp = fopen(file.c_str(), "rb"); // non-Windows use "r"
 	char readBuffer[65536];
 	FileReadStream is(fp, readBuffer, sizeof(readBuffer));
-	Document d;
 	// Set the document with the data in the input stream
-	d.ParseStream(is);
+	document.ParseStream(is);
 	fclose(fp);
-
-	// Set data to members of the parser class
-	// string value = d["hello"].GetString();
-	// cout << value;
 }
+
+
